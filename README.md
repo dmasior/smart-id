@@ -1,27 +1,27 @@
 # smartid [![CI](https://github.com/dmasior/smartid/actions/workflows/ci.yml/badge.svg)](https://github.com/dmasior/smartid/actions/workflows/ci.yml)
-The smartid package generates URL-friendly base encoded 160 bit (20 byte) random identifiers. Examples:
-
-`ZcCQzaWuv7QnBws0ajmPAWEl7oY`
-
-`eUNzKl58Z-SRhsCOSYe8N6d5BB4`
+The smartid package generates URL-friendly 160 bit (20 byte) random identifiers, base64 encoded.
 
 
-###### install
-`go get github.com/dmasior/smartid`
+160 bit is better than uid v4 (122 bit) and is [OWASP-compatible](https://owasp.org/www-community/vulnerabilities/Insufficient_Session-ID_Length) (>= 128 bit)
 
 
-###### usage
+##### install
+```sh
+go get github.com/dmasior/smartid
+```
+
+
+##### usage
 
 ```go
 id := smartid.MustNew()
 
 fmt.Println(id.String())
 
-// Prints string representation, example:
-// 9z4Q7WaUmzQetcj8CCWcKITTg3w
+// Prints: 9z4Q7WaUmzQetcj8CCWcKITTg3w
 ```
 
-###### Documentation
+##### Documentation
 [![GoDoc](https://godoc.org/github.com/dmasior/smartid?status.svg)](http://godoc.org/github.com/dmasior/smartid)
 
 
