@@ -12,7 +12,7 @@ type SmartID [27]byte
 var (
 	rander  = rand.Reader
 	enc     = base64.URLEncoding.WithPadding(base64.NoPadding)
-	EmptyID = SmartID{}
+	emptyID = SmartID{}
 )
 
 // MustNew creates new SmartID or panics.
@@ -32,7 +32,7 @@ func New() (SmartID, error) {
 	_, err := io.ReadFull(rander, unencodedID[:])
 
 	if err != nil {
-		return EmptyID, err
+		return emptyID, err
 	}
 
 	encodedID := make([]byte, 27)
