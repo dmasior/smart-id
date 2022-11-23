@@ -15,16 +15,6 @@ var (
 	emptyID = SmartID{}
 )
 
-// MustNew creates new SmartID or panics.
-func MustNew() SmartID {
-	return Must(New())
-}
-
-// MustNewString creates new SmartID and returns it as string or panics.
-func MustNewString() string {
-	return Must(New()).String()
-}
-
 // New creates new SmartID.
 func New() (SmartID, error) {
 	var unencodedID [20]byte
@@ -42,6 +32,22 @@ func New() (SmartID, error) {
 	copy(sID[:], encodedID)
 
 	return sID, nil
+}
+
+// MustNew creates new SmartID or panics.
+// MustNew is equivalent of:
+//
+//	smartid.Must(smartid.New())
+func MustNew() SmartID {
+	return Must(New())
+}
+
+// MustNewString creates new SmartID and returns it as string or panics.
+// MustNewString is equivalent of:
+//
+//	smartid.Must(smartid.New()).String()
+func MustNewString() string {
+	return Must(New()).String()
 }
 
 // Must returns SmartID if err is nil and panics otherwise.
