@@ -25,13 +25,10 @@ func New() (SmartID, error) {
 		return emptyID, err
 	}
 
-	encodedID := make([]byte, 27)
-	enc.Encode(encodedID, unencodedID[:])
+	var ID SmartID
+	enc.Encode(ID[:], unencodedID[:])
 
-	var sID SmartID
-	copy(sID[:], encodedID)
-
-	return sID, nil
+	return ID, nil
 }
 
 // MustNew creates new SmartID or panics.
