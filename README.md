@@ -4,7 +4,7 @@
 The smartid package generates URL and filename safe 160 bit (20 byte) random IDs using URL and Filename safe alphabet [[RFC](https://datatracker.ietf.org/doc/html/rfc4648#page-7)].
 
 
-Safe and fast. Based on `crypto/rand`. No external depdendencies required.
+Fast and safe. Based on stdlib `crypto/rand`. No external depdendencies required.
 
 
 ##### Documentation

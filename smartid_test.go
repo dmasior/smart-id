@@ -11,10 +11,10 @@ func TestNew(t *testing.T) {
 	if err != nil {
 		t.Errorf("error creating new smartid")
 	}
-	if len(id) != 27 {
+	if got, want := len(id), 27; got != want {
 		t.Errorf("id len should be 27")
 	}
-	if len(id.String()) != 27 {
+	if got, want := len(id.String()), 27; got != want {
 		t.Errorf("id string len should be 27, got %d", len(id.String()))
 	}
 }
